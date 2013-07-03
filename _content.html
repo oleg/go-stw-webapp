@@ -1,12 +1,12 @@
 <div class="post">
         <h2 class="title"><a href="#">Tokenized</a></h2>
-        {{Filename}}
+        {{.Filename}}
         <div class="entry">
-          {{.repeated section Words}}
+          {{range .Words}}
             <a class="word-block" href="javascript:void(0);">
-              <span class="word">{{Word}}</span>
-              <span class="superscript">{{Count}}</span>
+              <span class="word">{{.Word}}</span>
+              <span class="superscript">{{.Count}}</span>
             </a> 
-          {{.end}}
+          {{end}}
         </div>
 </div>

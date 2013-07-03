@@ -1,5 +1,5 @@
   <ul>
-    {{.repeated section @}}
-            <li class="{{Class}}" ><a href="{{Url}}">{{Name}}</a></li>
-    {{.end}}
+    {{range .}}
+            <li class="{{.Class}}" ><a href="{{.Url}}">{{.Name}}</a></li>
+    {{end}}
   </ul>

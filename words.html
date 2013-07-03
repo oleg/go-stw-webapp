@@ -1,8 +1,8 @@
 <div class="post">
         <h2 class="title"><a href="#">Words you already know</a></h2>
         <div class="entry">
-          {{.repeated section @}}
-              {{@}} |
-          {{.end}}
+          {{range .}}
+              {{.Word}} |
+          {{end}}
         </div>
 </div>
