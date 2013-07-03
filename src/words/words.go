@@ -1,4 +1,4 @@
-package hello
+package words
 
 import (
 	"net/http"
@@ -254,7 +254,7 @@ func renderToString(name string, data interface{}) (rendered string, error error
 	tmpl := tt.New(name)
 
 	b := bytes.NewBuffer([]byte{})
-	_, err := tmpl.ParseFiles(name)
+	_, err := tmpl.ParseFiles("html/" + name)
 	if err == nil {
 		err = tmpl.Execute(b, data)
 	}
@@ -265,7 +265,7 @@ func renderToString(name string, data interface{}) (rendered string, error error
 func render(name string, data interface{}, wr http.ResponseWriter) {
 	tmpl := tt.New(name)
 
-	_, err := tmpl.ParseFiles(name)
+	_, err := tmpl.ParseFiles("html/" + name)
 	if err == nil {
 		err = tmpl.Execute(wr, data)
 	}
